@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+    title="Message Sent | Cory Coward"
+    description="Your message has been sent to Cory Coward."
+    activeNavigation="contact"
+>
+    <main class="contact-page">
+        <section class="contact-success" aria-labelledby="success-title">
+            <p class="eyebrow"><span></span> MESSAGE RECEIVED</p>
+            <h1 id="success-title">Thank you.</h1>
+            <p>
+                Your message is on its way. I will get back to you as soon as I can.
+            </p>
+            <a class="contact-return" href="/">
+                Return home <span aria-hidden="true">&rarr;</span>
+            </a>
+        </section>
+    </main>
+</BaseLayout>

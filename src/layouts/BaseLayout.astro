@@ -4,11 +4,11 @@ import "../styles/home.css";
 interface Props {
     title: string;
     description: string;
-    activeNavigation?: "projects";
+    activeNavigation?: "projects" | "contact";
 }
 
 const { activeNavigation, description, title } = Astro.props;
-const isDetailPage = Boolean(activeNavigation);
+const isSubpage = Boolean(activeNavigation);
 ---
 
 <html lang="en">
@@ -31,14 +31,20 @@ const isDetailPage = Boolean(activeNavigation);
                     <span>CORY.TECH</span>
                 </a>
                 <nav aria-label="Primary navigation">
-                    <a href={isDetailPage ? "/#experience" : "#experience"}>Experience</a>
+                    <a href={isSubpage ? "/#experience" : "#experience"}>Experience</a>
                     <a
                         class:list={{ active: activeNavigation === "projects" }}
-                        href={isDetailPage ? "/#projects" : "#projects"}
+                        href={isSubpage ? "/#projects" : "#projects"}
                     >
                         Projects
                     </a>
-                    <a href={isDetailPage ? "/#about" : "#about"}>About</a>
+                    <a href={isSubpage ? "/#about" : "#about"}>About</a>
+                    <a
+                        class:list={{ active: activeNavigation === "contact" }}
+                        href="/contact/"
+                    >
+                        Contact
+                    </a>
                 </nav>
             </header>
 
